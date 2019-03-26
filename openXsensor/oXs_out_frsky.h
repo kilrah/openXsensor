@@ -397,9 +397,9 @@ uint32_t millis( void ) ;
     #define TICKS2WAITONEHUB       (348*6)  // Wait one bit period.
     #define TICKS2WAITONE_HALFHUB  (520*6)    // Wait one and a half bit period.
   #elif F_CPU == 16000000L   // 16MHz clock                                                  
-    #define TICKS2COUNTHUB         (278*6)  // Ticks between two bits.
-    #define TICKS2WAITONEHUB       (278*6)  // Wait one bit period.
-    #define TICKS2WAITONE_HALFHUB  (416*6)    // Wait one and a half bit period.
+    #define TICKS2COUNTHUB         (70*6)  // Ticks between two bits.
+    #define TICKS2WAITONEHUB       (70*6)  // Wait one bit period.
+    #define TICKS2WAITONE_HALFHUB  (104*6)    // Wait one and a half bit period.
   #elif F_CPU == 8000000L    // 8MHz clock                                                   
     #define TICKS2COUNTHUB         (139*6)  // Ticks between two bits.
     #define TICKS2WAITONEHUB       (139*6)  // Wait one bit period.
@@ -464,8 +464,8 @@ uint32_t millis( void ) ;
 #define TRXPORT PORTD
 #define TRXPIN  PIND
 
-#define SET_TX_PIN( )    ( TRXPORT |= ( 1 << PIN_SERIALTX ) )
-#define CLEAR_TX_PIN( )  ( TRXPORT &= ~( 1 << PIN_SERIALTX ) )
+#define CLEAR_TX_PIN( )    ( TRXPORT |= ( 1 << PIN_SERIALTX ) )
+#define SET_TX_PIN( )  ( TRXPORT &= ~( 1 << PIN_SERIALTX ) )
 #define GET_RX_PIN( )    ( TRXPIN & ( 1 << PIN_SERIALTX ) )
 
 //******************* End of part used for handling of UART with Receiver
@@ -473,9 +473,3 @@ uint32_t millis( void ) ;
 #endif // Enf of ndef MULTIPLEX
 
 #endif // OXS_OUT_h
-
-
-
-
-
-

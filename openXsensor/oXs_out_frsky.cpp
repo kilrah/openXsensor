@@ -736,7 +736,7 @@ void OXS_OUT::SendFrame1(){
 
 // pointer to Altitude
 #if defined(VARIO) 
-  uint16_t Centimeter =  uint16_t(abs(oXs_MS5611.varioData.absoluteAlt.value)%100);
+/*  uint16_t Centimeter =  uint16_t(abs(oXs_MS5611.varioData.absoluteAlt.value)%100);
   int32_t Meter;
   if (oXs_MS5611.varioData.absoluteAlt.value >0){
     Meter = (oXs_MS5611.varioData.absoluteAlt.value - Centimeter);
@@ -744,13 +744,19 @@ void OXS_OUT::SendFrame1(){
     Meter = -1*(abs(oXs_MS5611.varioData.absoluteAlt.value) + Centimeter);
   }
   Meter=Meter/100;
-  SendValue(FRSKY_USERDATA_BARO_ALT_B, (int16_t)Meter);
-  SendValue(FRSKY_USERDATA_BARO_ALT_A, Centimeter);
+  SendValue(FRSKY_USERDATA_BARO_ALT_B, (int16_t)Meter);*/
+  //SendValue(FRSKY_USERDATA_BARO_ALT_A, Centimeter);
+
+  if (varioData->absoluteAlt.available) {
+        int16_t meters = varioData->relativeAlt.value / 100;
+        SendValue(FRSKY_USERDATA_BARO_ALT_B, meters);
+        varioData->absoluteAlt.available = false;
+  }
 #endif
 
 // VSpeed
 #if defined(VARIO) 
-  SendValue( FRSKY_USERDATA_VERT_SPEED , (int16_t) mainVspeed.value);
+//  SendValue( FRSKY_USERDATA_VERT_SPEED , (int16_t) mainVspeed.value);
 #endif
 
 // Cell_1_2
@@ -1966,4 +1972,3 @@ void startHubTransmit()
 
 //********************************** End of code to handle the UART communication with the receiver
 #endif   //End of FRSKY protocols
-

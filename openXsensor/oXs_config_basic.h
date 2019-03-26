@@ -20,14 +20,14 @@
 #define OXS_CONFIG_BASIC_h
 
 // --------- 1 - Telemetry protocol ---------  
-#define PROTOCOL  FRSKY_SPORT   // select between FRSKY_SPORT , FRSKY_HUB , FRSKY_SPORT_HUB , MULTIPLEX , HOTT, JETI
+#define PROTOCOL  FRSKY_HUB   // select between FRSKY_SPORT , FRSKY_HUB , FRSKY_SPORT_HUB , MULTIPLEX , HOTT, JETI
 
 // ***** 1.1 - Pin connected to Rx ************                              See oXs_config_advanced.h (normally no need to change it) (default is arduino pin 4 connected to RX) 
 // ***** 1.2 - SPORT_SENSOR_ID (used only for Frsky Sport protocol)  *****   See oXs_config_advanced.h (normally no need to change it) 
 
 // --------- 2 - Data to transmit ---------   uncomment the lines below if you want to transmit some extra oXs measurements into some telemetry fields
 // ***** 2.1 - Frsky data *****                
-#define VFAS_SOURCE  VOLT_1                 // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4 
+//#define VFAS_SOURCE  VOLT_1                 // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4 
 //#define FUEL_SOURCE   ADS_VOLT_1                 // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
 //#define A3_SOURCE     ADS_VOLT_1                 // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
 //#define A4_SOURCE     ADS_VOLT_3                 // select between VOLT_1, VOLT_2, VOLT_3 , VOLT_4, VOLT_5 , VOLT_6, ADS_VOLT_1, ADS_VOLT_2, ADS_VOLT_3, ADS_VOLT_4
@@ -88,7 +88,7 @@
 // ***** 6.1 - Voltage Reference to measure voltages and current *****              see oXs_config_advanced.h when voltage reference is not Vcc and 5 volt
 
 // ***** 6.2 - Voltage parameters *****                                             see oXs_config_advanced.h for additionnal parameters when YES
-#define ARDUINO_MEASURES_VOLTAGES   YES                                        //   select between YES , NO (When NO, following line is discarded)
+#define ARDUINO_MEASURES_VOLTAGES   NO                                        //   select between YES , NO (When NO, following line is discarded)
 
 // ***** 6.3 - Max number of Lipo cells to measure (and transmit to Tx) *****
 #define NUMBEROFCELLS 0                                                 // Put this line as comment or set value to 0 (zero) if you do not want to transmit cell voltages.
@@ -124,5 +124,3 @@
 
 
 #endif// End define OXS_CONFIG_BASIC_h
-
-

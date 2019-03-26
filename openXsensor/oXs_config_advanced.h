@@ -17,7 +17,7 @@
 // --------- 1 - Telemetry protocol ---------  Protocol is defined in oXs_config_basic.h file
 
 // ****** 1.1 - Pin connected to Rx ********
-#define PIN_SERIALTX      4                 // The pin which transmits the serial data to the telemetry receiver, Usually pin 4 (otherwise pin 2)
+#define PIN_SERIALTX      1                 // The pin which transmits the serial data to the telemetry receiver, Usually pin 4 (otherwise pin 2)
 
 // ***** 1.2 - SPORT_SENSOR_ID used (only for Frsky Sport protocol)  *****   See list of available values in oXs_config_descripion.h 
 #define         DATA_ID_VARIO  0x00  // = sensor 0 used for Alt and Vspeed
@@ -49,7 +49,7 @@
 
 //#define FILL_TEST1_WITH_HEADING_FROM_MAGNETOMETER              // uncomment to activate this option
 
-#define FILL_TEST_1_2_3_WITH_FLOW_SENSOR_CONSUMPTION             // uncomment to activate this option
+//#define FILL_TEST_1_2_3_WITH_FLOW_SENSOR_CONSUMPTION             // uncomment to activate this option
 
 // --------- 3 - PPM settings ---------
 //#define PIN_PPM           2     // Uncomment this line in order to use a Rx channel to control oXs; default is 2 but my own device use 3
@@ -359,5 +359,3 @@ struct ONE_MEASUREMENT {
 
 
 #endif// End define OXS_CONFIG_ADVANCED_h
-
-
